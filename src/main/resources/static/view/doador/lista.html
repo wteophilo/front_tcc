@@ -1,0 +1,23 @@
+<div class = "container">
+<h2> Lista de doadores</h2>
+<table ng-show="doadores.length > 0" class="table table-condensed">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Nome</th>
+      <th>Email</th>
+      <th>Cep</th>
+      <th>Endereço</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="doador in doadores">
+      <td>{{doador.id}}</td>
+      <td>{{doador.nome}}</td>
+      <td>{{doador.email}}</td>
+      <td>{{doador.cep}}</td>
+      <td>{{doador.endereco}}</td>
+    </tr>
+  </tbody>
+</table>
+</div>

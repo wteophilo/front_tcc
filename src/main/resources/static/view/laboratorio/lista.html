@@ -1,0 +1,27 @@
+<div class ="container">
+  <h2>Laboratórios Conveniados:</h2>
+  <hr/>
+  <div class="alert alert-info" ng-show ="message.length>0"> {{message}}</div>
+  <div class = "container">
+    <table ng-show="laboratorios.length > 0" class="table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nome</th>
+          <th>Endereço</th>
+          <th>Cep</th>
+          <th>Email</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="laboratorio in laboratorios">
+          <td>{{laboratorio.id}}</td>
+          <td>{{laboratorio.nome}}</td>
+          <td>{{laboratorio.endereco}}</td>
+          <td>{{laboratorio.cep}}</td>
+          <td>{{laboratorio.email}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -1,0 +1,32 @@
+<div class = "container">
+  <div id = "formLaboratorio">
+    <h4>Laboratório: Preencha os dados</h4>
+    <hr/>
+    <div class="alert alert-info" ng-show ="message.length>0"> {{message}}</div>
+       <form name="formLaboratorio" class="form-horizontal">
+         <div class="form-group">
+           <label>Nome:</label>
+           <input type="text" class="form-control" id = "nome_laboratorio" placeholder="Adicione o nome" ng-model="laboratorio.nome" ng-require = "true"/>
+         </div>
+
+         <div class="form-group">
+           <label>Email:</label>
+           <input type="text" class="form-control"  id = "email_laboratorio" placeholder="Adicione o email" ng-model="laboratorio.email" ng-require = "true"/>
+         </div>
+
+         <div class="form-group">
+           <label>Cep:</label>
+           <input type="text" class="form-control"  id = "cep_laboratorio" placeholder="Adicione o cep" ng-model="laboratorio.cep" ng-require = "true"/>
+         </div>
+
+         <div class="form-group">
+           <label>Endereço:</label>
+           <input type="text" class="form-control"  id = "endereco_laboratorio" placeholder="Adicione o endereço" ng-model="laboratorio.endereco" class="validate" ng-require = "true"/>
+         </div>
+         <div class="form-group">
+           <button type="submit" class="btn btn-default" ng-click="adicionaLaboratorio(laboratorio)" ng-disable = "!laboratorio.nome || laboratorio.endereco"> Cadastrar </button>
+         </div>
+       </form>
+    </div>
+
+</div>
