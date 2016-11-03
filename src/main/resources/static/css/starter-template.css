@@ -1,7 +1,59 @@
 body {
   padding-top: 50px;
+   font-family: "Lucida Grande", "Lucida Sans Unicode", Verdana,sans-serif;
 }
 .starter-template {
   padding: 40px 15px;
   text-align: center;
+}
+
+/*Deixando o site responsivel*/
+
+@media(max-width: 991px){
+  .jumbotron h1{
+    font-size: 45px;
+  }
+
+  .jumbotron h2{
+    font-size: 26px;
+  }
+
+  .jumbotron p{
+      font-size: 18px;
+  }
+
+
+  .btn-lg {
+    font-size: 21px;
+  }
+
+}
+
+
+@media(max-width: 767px){
+  .jumbotron {
+    padding-top: 50px;
+    padding-bottom:50px;
+  }
+
+
+  .jumbotron h1{
+    font-size: 30px;
+  }
+
+  .jumbotron p{
+      font-size: 15px;
+  }
+
+  .btn-lg {
+    font-size: 18px;
+  }
+  
+    .navbar{
+    padding-bottom: 40px;
+    background-color: #AFBD77;
+    border: 0px none;
+  }
+  
+
 }

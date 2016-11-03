@@ -1,98 +1,200 @@
-<div class = "container">
-    <div class="alert alert-info" ng-show ="message.length>0"> {{message}}</div>
-    <form name="formAgenda" class="form-horizontal">
-    <h2>Doador</h2>
-    <hr/>
-    <div class ="container">
-        <div class="form-group">
-          <div class='col-sm-6'>
-              <label>Nome:</label>
-              <input type="text" class="form-control" id = "nome_agenda.doador" placeholder="Adicione o nome completo" ng-model="agenda.doador.nome" ng-require = "true"/>
-            </div>
-        </div>
+<script type="text/javascript">
+	$(document).ready(function() {
+		$("#cep_doador").mask("99.999-999", {
+			placeholder : " "
+		});
+		$("#rg_doador").mask("99.999.999-9", {
+			placeholder : " "
+		});
+		$("#cep_lab").mask("99.999-999", {
+			placeholder : " "
+		});
+	});
 
-      <div class="form-group">
-        <div class='col-sm-6'>
-          <label>Email:</label>
-          <input type="text" class="form-control"  id = "email_agenda.doador" placeholder="Adicione o email" ng-model="agenda.doador.email" ng-require = "true"/>
-        </div>
-      </div>
+	$(function() {
+		$('#datetimepicker').datetimepicker({
+			locale : 'pt-br',
+			format : 'DD-MM-YYYY HH:mm:ss',
+			icons : {
+				previous : 'fa fa-arrow-left',
+				next : 'fa fa-arrow-right',
+				time : "fa fa-clock-o",
+				date : "fa fa-calendar",
+				up : "fa fa-arrow-up",
+				down : "fa fa-arrow-down"
+			}
+		});
+	});
+</script>
+<div class="container">
+	<div class="alert alert-info" ng-show="message.length>0">
+		{{message}}</div>
+	<form name="formAgenda" class="form-horizontal">
+		<h2>Doador</h2>
+		<hr />
 
-      <div class="form-group">
-        <div class='col-sm-6'>
-          <label>Rg:</label>
-          <input type="text"class="form-control"  id = "rg_agenda.doador" placeholder="Adicione o rg" ng-model="agenda.doador.rg" ng-require = "true"/>
-        </div>
-      </div>
+		<div class="container">
+			<div ng-show="formAgenda.nome_agenda_doador.$dirty"
+				ng-messages="formAgenda.nome_agenda_doador.$error">
+				<div ng-message="required" class="alert alert-danger">Por
+					favor preencha o campo nome.</div>
+				<div ng-message="minlength" class="alert alert-danger">O campo
+					deve possuir no mínimo 6 caracteres.</div>
+			</div>
 
-      <div class="form-group">
-        <div class='col-sm-6'>
-          <label>Cep:</label>
-          <input type="text" class="form-control"  id = "cep_agenda.doador" placeholder="Adicione o cep" ng-model="agenda.doador.cep" ng-require = "true"/>
-        </div>
-      </div>
-
-      <div class="form-group">
-        <div class='col-sm-6'>
-          <label>Endereço:</label>
-          <input type="text" class="form-control"  id = "endereco_agenda.doador" placeholder="Adicione o endereço" ng-model="agenda.doador.endereco" class="validate" ng-require = "true"/>
-        </div>
-      </div>
-    </div>
-    <h2>Escolha o laboratório</h2>
-    <hr/>
-    <div class="container">
-        <div class="form-group">
-          <div class='col-sm-6'>
-            <label>Nome:</label>
-            <input type="text"class="form-control"  id = "nome_laboratorio" placeholder="Adicione o nome do laboratório" ng-model="agenda.laboratorio.nome" ng-require = "true"/>
-          </div>
-        </div>
-        <div class="form-group">
-          <div class='col-sm-6'>
-            <label>CEP:</label>
-            <input type="text"class="form-control"  id = "cep_laboratorio" placeholder="Adicione o cep" ng-model="agenda.laboratorio.cep" ng-require = "true"/>
-          </div>
-        </div>
-        <div class="form-group">
-          <div class='col-sm-6'>
-            <label>Endereço:</label>
-            <input type="text"class="form-control"  id = "cep_laboratorio" placeholder="Adicione o endereço" ng-model="agenda.laboratorio.endereco" ng-require = "true"/>
-        </div>
-        </div>
-    </div>
-
-    <h2>Escolha uma data:</h2>
-    <hr/>
-    <div class="container">
-      <div class="form-group">
-            <div class='col-sm-6'>
-                <input ng-model = "agenda.dataAgendamento" ng-require = "true" type="text" placeholder="dd/mm/yyyy" class="form-control" id='datetimepicker' />
-            </div>
-            <script type="text/javascript">
-                $(function () {
-                    $('#datetimepicker').datetimepicker({
-                      locale: 'pt-br',
-                      format: 'DD-MM-YYYY HH:mm:ss',
-                      icons: {
-                        previous: 'fa fa-arrow-left',
-                        next: 'fa fa-arrow-right',
-                        time: "fa fa-clock-o",
-                        date: "fa fa-calendar",
-                        up: "fa fa-arrow-up",
-                        down: "fa fa-arrow-down"
-                     }
-                    });
-                });
-            </script>
-        </div>
-    </div>
-
-    <div class="container">
-        <button type="submit" class="btn btn-default" ng-click="agendar(agenda)"> Agendar </button>
-    </div>
-  </form>
-  </div>
+			<div class="form-group">
+				<div class='col-sm-6'>
+					<label>Nome:</label> <input type="text" class="form-control"
+						id="nome_agenda_doador" name="nome_agenda_doador"
+						placeholder="Adicione o nome completo"
+						ng-model="agenda.doador.nome" ng-required="true" ng-minlength="6" />
+				</div>
+			</div>
 
 
+			<div ng-show="formAgenda.email_agenda_doador.$dirty"
+				ng-messages="formAgenda.email_agenda_doador.$error">
+				<div ng-message="required" class="alert alert-danger">Por
+					favor preencha o campo email.</div>
+			</div>
+
+			<div class="form-group">
+				<div class='col-sm-6'>
+					<label>Email:</label> <input type="text" class="form-control"
+						id="email_agenda_doador" name="email_agenda_doador"
+						placeholder="Adicione o email" ng-model="agenda.doador.email"
+						ng-required="true" />
+				</div>
+			</div>
+
+			<div ng-show="formAgenda.rg_doador.$dirty"
+				ng-messages="formAgenda.rg_doador.$error">
+				<div ng-message="required" class="alert alert-danger">Por
+					favor preencha o campo rg.</div>
+			</div>
+			<div class="form-group">
+				<div class='col-sm-6'>
+					<label>Rg:</label> <input type="text" class="form-control"
+						name="rg_doador" id="rg_doador" placeholder="Adicione o rg"
+						ng-model="agenda.doador.rg" ng-required="true" />
+				</div>
+			</div>
+
+			<div ng-show="formAgenda.cep_doador.$dirty"
+				ng-messages="formAgenda.cep_doador.$error">
+				<div ng-message="required" class="alert alert-danger">Por
+					favor preencha o campo cep.</div>
+			</div>
+			<div class="form-group">
+				<div class='col-sm-6'>
+					<label>Cep:</label> <input type="text" class="form-control"
+						id="cep_doador" name="cep_doador" placeholder="Adicione o cep"
+						ng-model="agenda.doador.cep" ng-required="true" />
+				</div>
+			</div>
+
+
+			<div ng-show="formAgenda.endereco_agenda_doador.$dirty"
+				ng-messages="formAgenda.endereco_agenda_doador.$error">
+
+				<div ng-message="required" class="alert alert-danger">Por
+					favor preencha o campo endereço.</div>
+				<div ng-message="minlength" class="alert alert-danger">O campo
+					deve possuir no mínimo 6 caracteres.</div>
+			</div>
+			<div class="form-group">
+				<div class='col-sm-6'>
+					<label>Endereço:</label> <input type="text" class="form-control"
+						id="endereco_agenda_doador" name="endereco_agenda_doador"
+						placeholder="Adicione o endereço"
+						ng-model="agenda.doador.endereco" class="validate"
+						ng-required="true" ng-minlength="6" />
+				</div>
+			</div>
+		</div>
+		<h2>Escolha o laboratório</h2>
+		<hr />
+		<div class="container">
+
+			<div ng-show="formAgenda.nome_laboratorio.$dirty"
+				ng-messages="formAgenda.nome_laboratorio.$error">
+				<div ng-message="required" class="alert alert-danger">Por
+					favor preencha o campo endereço.</div>
+				<div ng-message="minlength" class="alert alert-danger">O campo
+					deve possuir no mínimo 6 caracteres.</div>
+			</div>
+
+			<div class="form-group">
+				<div class='col-sm-6'>
+					<label>Nome:</label> <input type="text" class="form-control"
+						id="nome_laboratorio" name="nome_laboratorio"
+						placeholder="Adicione o nome do laboratório"
+						ng-model="agenda.laboratorio.nome" ng-required="true"
+						ng-minlength="6" />
+				</div>
+			</div>
+
+			<div ng-show="formAgenda.cep_lab.$dirty"
+				ng-messages="formAgenda.cep_lab.$error">
+				<div ng-message="required" class="alert alert-danger">Por
+					favor preencha o campo endereço.</div>
+				<div ng-message="minlength" class="alert alert-danger">O
+					campo deve possuir no mínimo 6 caracteres.</div>
+			</div>
+
+			<div class="form-group">
+				<div class='col-sm-6'>
+					<label>CEP:</label> <input type="text" class="form-control"
+						id="cep_lab" name="cep_lab" placeholder="Adicione o cep"
+						ng-model="agenda.laboratorio.cep" ng-required="true" />
+				</div>
+			</div>
+
+
+			<div ng-show="formAgenda.agenda_laboratorio_endereco.$dirty"
+				ng-messages="formAgenda.agenda_laboratorio_endereco.$error">
+				<div ng-message="required" class="alert alert-danger">Por
+					favor preencha o campo nome.</div>
+				<div ng-message="minlength" class="alert alert-danger">O
+					campo deve possuir no mínimo 6 caracteres.</div>
+			</div>
+			<div class="form-group">
+				<div class='col-sm-6'>
+					<label>Endereço:</label> <input type="text" class="form-control"
+						id="agenda_laboratorio_endereco"
+						name="agenda_laboratorio_endereco"
+						placeholder="Adicione o endereço"
+						ng-model="agenda.laboratorio.endereco" ng-required="true"
+						ng-minlength="6" />
+				</div>
+			</div>
+		</div>
+
+		<h2>Escolha uma data:</h2>
+		<hr />
+		<div class="container">
+			<div ng-show="formAgenda.datetimepicker.$dirty"
+				ng-messages="formAgenda.datetimepicker.$error">
+				<div ng-message="required" class="alert alert-danger">Por
+					favor preencha o campo data.</div>
+			</div>
+		
+			<div class="form-group">
+				<div class='col-sm-6'>
+					<input ng-model="agenda.dataAgendamento" ng-required="true"
+						type="text" name = "datetimepicker" placeholder="dd/mm/yyyy HH:mm:ss" class="form-control"
+						id='datetimepicker' ng-required = "true"/>
+				</div>
+			</div>
+		</div>
+
+		<div class="container">
+			<div class="form-group">
+				<div class='col-sm-6'>
+					<button type="submit" id="btSummit" name="btSummit"
+						class="btn btn-primary" ng-click="agendar(agenda)">Agendar</button>
+				</div>
+			</div>
+		</div>
+	</form>
 </div>

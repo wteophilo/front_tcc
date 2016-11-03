@@ -20,5 +20,5 @@ angular.module('app').controller('laboratoriocontroller',function($scope,laborat
     };
 
 
-    carregaLaboratorio();
+    //carregaLaboratorio();
 });

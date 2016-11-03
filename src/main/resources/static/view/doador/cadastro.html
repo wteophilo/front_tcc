@@ -1,39 +1,109 @@
+<script type="text/javascript">
+	$(document).ready(function() {
+		$("#cep_doador").mask("99.999-999");
+		$("#rg_doador").mask("99.999.999-9", {
+			placeholder : " "
+		});
+	});
+</script>
 
-<div class = "container">
-  <div id = "formDoador">
-    <h4>Doador: Preencha os dados</h4>
-    <hr/>
- 	<div class="alert alert-info" ng-show ="message.length>0"> {{message}}</div>
-       <form name="formDoador" class="form-horizontal">
-            <div class="form-group">
-              <label>Nome:</label>
-              <input type="text" class="form-control" id = "nome_doador" placeholder="Adicione o nome completo" ng-model="doador.nome" ng-require = "true"/>
-            </div>
+<div class="container">
+	<div id="formDoador">
+		<h4>Doador: Preencha os dados</h4>
+		<hr />
+		<div class="alert alert-info" ng-show="message.length>0">
+			{{message}}</div>
+		<form name="formDoador" class="form-horizontal">
 
-            <div class="form-group">
-              <label>Email:</label>
-              <input type="text" class="form-control"  id = "email_doador" placeholder="Adicione o email" ng-model="doador.email" ng-require = "true"/>
-            </div>
+			<div ng-show="formDoador.nome_agenda_doador.$dirty"
+				ng-messages="formDoador.nome_agenda_doador.$error">
+				<div ng-message="required" class="alert alert-danger">Por
+					favor preencha o campo nome.</div>
+				<div ng-message="minlength" class="alert alert-danger">O campo
+					deve possuir no mínimo 6 caracteres.</div>
+			</div>
 
-            <div class="form-group">
-              <label>Rg:</label>
-              <input type="text"class="form-control"  id = "rg_doador" placeholder="Adicione o rg" ng-model="doador.rg" ng-require = "true"/>
-            </div>
+			<div class="form-group">
+				<div class='col-sm-6'>
+					<label>Nome:</label> <input type="text" class="form-control"
+						id="nome_agenda_doador" name="nome_agenda_doador"
+						placeholder="Adicione o nome completo"
+						ng-model="agenda.doador.nome" ng-required="true" ng-minlength="6" />
+				</div>
+			</div>
 
-            <div class="form-group">
-              <label>Cep:</label>
-              <input type="text" class="form-control"  id = "cep_doador" placeholder="Adicione o cep" ng-model="doador.cep" ng-require = "true"/>
-            </div>
 
-            <div class="form-group">
-              <label>Endereço:</label>
-              <input type="text" class="form-control"  id = "endereco_doador" placeholder="Adicione o endereço" ng-model="doador.endereco" class="validate" ng-require = "true"/>
-            </div>
-            <div class="form-group">
-              <button type="submit" class="btn btn-default" g-click="adicionaDoador(doador)" ng-disable = "!doador.nome || doador.endereco"> Cadastrar </button>
-            </div>
-          </form>
-      </div>
-  </div>
+			<div ng-show="formDoador.email_agenda_doador.$dirty"
+				ng-messages="formDoador.email_agenda_doador.$error">
+				<div ng-message="required" class="alert alert-danger">Por
+					favor preencha o campo email.</div>
+			</div>
+
+			<div class="form-group">
+				<div class='col-sm-6'>
+					<label>Email:</label> <input type="text" class="form-control"
+						id="email_agenda_doador" name="email_agenda_doador"
+						placeholder="Adicione o email" ng-model="agenda.doador.email"
+						ng-required="true" />
+				</div>
+			</div>
+
+			<div ng-show="formDoador.rg_doador.$dirty"
+				ng-messages="formDoador.rg_doador.$error">
+				<div ng-message="required" class="alert alert-danger">Por
+					favor preencha o campo rg.</div>
+			</div>
+			<div class="form-group">
+				<div class='col-sm-6'>
+					<label>Rg:</label> <input type="text" class="form-control"
+						name="rg_doador" id="rg_doador" placeholder="Adicione o rg"
+						ng-model="agenda.doador.rg" ng-required="true" />
+				</div>
+			</div>
+
+			<div ng-show="formDoador.cep_doador.$dirty"
+				ng-messages="formDoador.cep_doador.$error">
+				<div ng-message="required" class="alert alert-danger">Por
+					favor preencha o campo cep.</div>
+			</div>
+			<div class="form-group">
+				<div class='col-sm-6'>
+					<label>Cep:</label> <input type="text" class="form-control"
+						id="cep_doador" name="cep_doador" placeholder="Adicione o cep"
+						ng-model="agenda.doador.cep" ng-required="true" />
+				</div>
+			</div>
+
+
+			<div ng-show="formDoador.endereco_agenda_doador.$dirty"
+				ng-messages="formDoador.endereco_agenda_doador.$error">
+
+				<div ng-message="required" class="alert alert-danger">Por
+					favor preencha o campo endereço.</div>
+				<div ng-message="minlength" class="alert alert-danger">O campo
+					deve possuir no mínimo 6 caracteres.</div>
+			</div>
+			<div class="form-group">
+				<div class='col-sm-6'>
+					<label>Endereço:</label> <input type="text" class="form-control"
+						id="endereco_agenda_doador" name="endereco_agenda_doador"
+						placeholder="Adicione o endereço"
+						ng-model="agenda.doador.endereco" class="validate"
+						ng-required="true" ng-minlength="6" />
+				</div>
+			</div>
+
+
+			<div class="form-group">
+				<div class='col-sm-6'>
+					<button type="submit" id="btSummit" name="btSummit"
+						class="btn btn-primary" ng-click="adicionaDoador(doador)"
+						ng-disabled="formDoador.$invalid">Cadastrar</button>
+				</div>
+			</div>
+
+		</form>
+	</div>
+</div>
 
 </div>
