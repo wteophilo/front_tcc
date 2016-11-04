@@ -8,52 +8,50 @@ body {
 }
 
 /*Deixando o site responsivel*/
+@media(max-width: 1199px){
+  .jumbotron h1{
+    font-size: 56px;
+    margin-bottom: 30px;
+  }
+}
+
 
 @media(max-width: 991px){
   .jumbotron h1{
-    font-size: 45px;
-  }
-
-  .jumbotron h2{
-    font-size: 26px;
+    font-size: 44px;
   }
 
   .jumbotron p{
-      font-size: 18px;
+    padding-top: 0 10px;
   }
 
-
-  .btn-lg {
-    font-size: 21px;
+  #get-involved .col-md-4{
+    padding-top: 20px;
+    padding-bottom: 20px;
   }
-
 }
 
 
 @media(max-width: 767px){
-  .jumbotron {
-    padding-top: 50px;
-    padding-bottom:50px;
-  }
-
-
   .jumbotron h1{
-    font-size: 30px;
+    font-size: 24px;
   }
 
   .jumbotron p{
-      font-size: 15px;
+    font-size: 16px;
+    padding: 0;
   }
 
-  .btn-lg {
+  .btn-lg{
     font-size: 18px;
   }
-  
-    .navbar{
-    padding-bottom: 40px;
-    background-color: #AFBD77;
-    border: 0px none;
+
+  .homepage p{
+    font-size: 18px;
+}
+
+  footer img {
+    width: 80%;
   }
-  
 
 }

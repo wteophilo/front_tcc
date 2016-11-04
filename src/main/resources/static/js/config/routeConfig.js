@@ -25,9 +25,15 @@ angular.module("app").config(function($routeProvider){
      templateUrl: 'view/laboratorio/cadastro.html',
      controller: 'laboratoriocontroller',
   });
+  
+  $routeProvider.when('/login', {
+     templateUrl: 'view/user/login.html',
+     controller: 'usercontroller',
+  });
 
-  $routeProvider.when('/erro500', {
-     templateUrl: 'view/erros/500.html',
+
+  $routeProvider.when('/error', {
+     templateUrl: 'view/error.html',
   });
 
 
