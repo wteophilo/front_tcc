@@ -3,7 +3,7 @@ angular.module('app').controller('agendacontroller',function($scope,agendaAPI){
    $scope.todosAsAgendas = [];
    $scope.agenda={};
 
-   var carregaLaboratorio = function(lab){
+   var carregaLaboratorio = function(){
      agendaAPI.getAgenda().success(function(data){
         $scope.todosAsAgendas = data;
      }).error(function (data, status) {
