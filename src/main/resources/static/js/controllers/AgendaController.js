@@ -1,11 +1,11 @@
-angular.module('app').controller('agendacontroller',function($scope,agendaAPI){
+angular.module('app').controller('agendacontroller',function($scope,agendaAPI,laboratorioAPI){
    $scope.listaAgenda=[];
-   $scope.todosAsAgendas = [];
+   $scope.laboratorios = [];
    $scope.agenda={};
 
    var carregaLaboratorio = function(){
-     agendaAPI.getAgenda().success(function(data){
-        $scope.todosAsAgendas = data;
+     laboratorioAPI.getLaboratorios().success(function(data){
+        $scope.laboratorios = data;
      }).error(function (data, status) {
        $scope.message = "Não foi possivel conectar ao servidor tente mais tarde " + data;
      });
@@ -20,5 +20,7 @@ angular.module('app').controller('agendacontroller',function($scope,agendaAPI){
           $scope.message = "Ocorreu um problema ao criar o doador "+ data;
         });
     };
+    
+    carregaLaboratorio();
 
 });

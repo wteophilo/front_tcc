@@ -115,25 +115,17 @@
 		<h2>Escolha o laboratório</h2>
 		<hr />
 		<div class="container">
-
-			<div ng-show="formAgenda.nome_laboratorio.$dirty"
-				ng-messages="formAgenda.nome_laboratorio.$error">
-				<div ng-message="required" class="alert alert-danger">Por
-					favor preencha o campo endereço.</div>
-				<div ng-message="minlength" class="alert alert-danger">O campo
-					deve possuir no mínimo 6 caracteres.</div>
-			</div>
-
+		
 			<div class="form-group">
 				<div class='col-sm-6'>
-					<label>Nome:</label> <input type="text" class="form-control"
-						id="nome_laboratorio" name="nome_laboratorio"
-						placeholder="Adicione o nome do laboratório"
-						ng-model="agenda.laboratorio.nome" ng-required="true"
-						ng-minlength="6" />
-				</div>
+					<label>Nome:
+						<select class="form-control" ng-model="agenda.laboratorio" ng-options="laboratorio.nome for laboratorio in laboratorios">
+							<option value ="">Selecione o Laboratório</option>
+						</select>
+					</label>					
+				</div> 
 			</div>
-
+		
 			<div ng-show="formAgenda.cep_lab.$dirty"
 				ng-messages="formAgenda.cep_lab.$error">
 				<div ng-message="required" class="alert alert-danger">Por
@@ -145,8 +137,8 @@
 			<div class="form-group">
 				<div class='col-sm-6'>
 					<label>CEP:</label> <input type="text" class="form-control"
-						id="cep_lab" name="cep_lab" placeholder="Adicione o cep"
-						ng-model="agenda.laboratorio.cep" ng-required="true" />
+						id="cep_lab" name="cep_lab" value = "laboratorio.cep" placeholder="Adicione o cep"
+						ng-model="agenda.laboratorio.cep" ng-required="true" ng-disabled="true" />
 				</div>
 			</div>
 
@@ -165,7 +157,7 @@
 						name="agenda_laboratorio_endereco"
 						placeholder="Adicione o endereço"
 						ng-model="agenda.laboratorio.endereco" ng-required="true"
-						ng-minlength="6" />
+						ng-minlength="6" ng-disabled="true" />
 				</div>
 			</div>
 		</div>

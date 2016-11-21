@@ -1,5 +1,5 @@
-angular.module("app").config(function($routeProvider){
-
+angular.module("app").config(function($routeProvider,$httpProvider){
+	
   $routeProvider.when('/', {
      templateUrl: 'view/home.html',
      controller: 'homecontroller',
