@@ -1,34 +1,62 @@
-<div class="starter-template">
+<div class="jumbotron jumbomain">
 	<div class="container">
-		<div class="jumbotron">
-			<h1>Doe Sangue</h1>
-			<p>Agende agora sua doação e ajude muitas pessoas</p>
-			<p>
-				<a ng-class="{active: activetab == '/agendar'}"
-					class="btn btn-lg btn-success" role="button" href="#/agendar">Agendar
-					Doação</a>
-			</p>
-		</div>
-		<div>
-			<div class="row">
-				<div class="col-xs-6">
-					<h2>Laboratório</h2>
-					<p>Lista de laboratórios conveniados</p>
-					<p>
+		<h1>Doe Sangue</h1>
+		<p><img src="imagens/sangue.jpg" alt="PUC MINAS"></p>
+		<p>Agende agora sua doação e salve vidas.</p>
+	</div>
+</div>
 
-						<a ng-class="{active: activetab == '/listaLaboratorio'}"
-							href="#/listaLaboratorio" role="button" class="btn btn-primary">
-							Laboratórios </a>
-					</p>
-				</div>
+<div id="get-involved">
+	<div class="container homepage">
+		<h2>Funcionalidades</h2>
+		<hr />
+		<div class="row">
 
-				<div class="col-xs-6">
-					<h2>Coleta de Sangue</h2>
-					<p>Registro Sangue</p>
-					<p>
-						<a role="button" href="#" class="btn btn-primary">Coletar de Sangue</a>
-					</p>
-				</div>
+			<div class="col-md-4">
+				<h3>Agendamento</h3>
+				<span class="fa-stack fa-4x"> <i
+					class="fa fa-circle fa-stack-2x"></i> <i
+					class="fa fa-calendar-o fa-stack-1x fa-inverse"></i>
+				</span>
+				<p>Agende uma data para a coleta de sangue em um dos laboratórios</p>
+				<p>
+					<a class="btn btn-default ng-class=" {active: activetab==
+						'/agendar'}" role="button" href="#/agendar">Agendar</a>
+				</p>
+			</div>
+
+			<div class="col-md-4">
+				<h3>Laboratórios</h3>
+				<span class="fa-stack fa-4x"> <i
+					class="fa fa-circle fa-stack-2x"></i> <i
+					class="fa fa-hospital-o fa-stack-1x fa-inverse"></i>
+				</span>
+				<p>Lista de todos os laboratórios conveniados para coleta de
+					sangue.</p>
+				<p>
+					<a class="btn btn-default"
+						ng-class="{active: activetab == '/listaLaboratorio'}"
+						href="#/listaLaboratorio" role="button" class="btn btn-primary">
+						Laboratórios </a>
+				</p>
+
+			</div>
+
+			<div class="col-md-4">
+				<h2>Registro Sangue</h2>
+				<span class="fa-stack fa-4x"> <i
+					class="fa fa-circle fa-stack-2x"></i> <i
+					class="fa fa-heartbeat fa-stack-1x fa-inverse"></i>
+				</span>
+
+				<p>Coleta de sangue realizada por funcionários capacitados.</p>
+				<p>
+					<a class="btn btn-default"
+						ng-class="{active: activetab == '/adicionaBolsa'}"
+						href="#/adicionaBolsa" role="button" class="btn btn-primary">
+						Registra Bolsa </a>
+				</p>
+
 			</div>
 		</div>
 	</div>

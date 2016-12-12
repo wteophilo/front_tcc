@@ -4,6 +4,11 @@
 			placeholder : " "
 		});
 	});
+	$(document).ready(function() {
+		$("#cnpj_laboratorio").mask("99.999.999/9999-99", {
+			placeholder : " "
+		});
+	});
 </script>
 <div class="container">
 	<div id="formLaboratorio">
@@ -25,6 +30,20 @@
 					<label>Nome:</label> <input type="text" class="form-control"
 						id="nome_laboratorio" name="nome_laboratorio"
 						placeholder="Adicione o nome" ng-model="laboratorio.nome"
+						ng-required="true" />
+				</div>
+			</div>
+			
+			<div ng-show="formLaboratorio.cnpj_laboratorio.$dirty"
+				ng-messages="formLaboratorio.cnpj_laboratorio.$error">
+				<div ng-message="required" class="alert alert-danger">Por
+					favor preencha o campo cnpj.</div>
+			</div>
+			<div class="form-group">
+				<div class='col-sm-6'>
+					<label>Cnpj:</label> <input type="text" class="form-control"
+						id="cnpj_laboratorio" name="cnpj_laboratorio"
+						placeholder="Adicione o cnpj" ng-model="laboratorio.cnpj"
 						ng-required="true" />
 				</div>
 			</div>

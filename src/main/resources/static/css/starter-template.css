@@ -1,57 +1,59 @@
 body {
-  padding-top: 50px;
-   font-family: "Lucida Grande", "Lucida Sans Unicode", Verdana,sans-serif;
+	font-family: "Lucida Grande", "Lucida Sans Unicode", Verdana, sans-serif;
+	margin-top: 60px;
+	padding: 15px 15px 15px 15px;
 }
-.starter-template {
-  padding: 40px 15px;
+
+.jumbotron p {
+	padding-top: 10px;
+}
+
+.container p{
+	padding-top: 10px;
+}
+
+.container h2{
+	font-size: 30px;
+}
+
+.homepage{
   text-align: center;
+  padding-top: 30px;
+  padding-bottom:30px;
 }
 
-/*Deixando o site responsivel*/
-@media(max-width: 1199px){
-  .jumbotron h1{
-    font-size: 56px;
-    margin-bottom: 30px;
-  }
+@media ( max-width : 991px) {
+	.jumbotron h1 {
+		font-size: 44px;
+	}
+	.jumbotron p {
+		padding-top: 0 10px;
+	}
+	#get-involved .col-md-4 {
+		padding-top: 20px;
+		padding-bottom: 20px;
+	}
 }
 
-
-@media(max-width: 991px){
-  .jumbotron h1{
-    font-size: 44px;
-  }
-
-  .jumbotron p{
-    padding-top: 0 10px;
-  }
-
-  #get-involved .col-md-4{
-    padding-top: 20px;
-    padding-bottom: 20px;
-  }
-}
-
-
-@media(max-width: 767px){
-  .jumbotron h1{
-    font-size: 24px;
-  }
-
-  .jumbotron p{
-    font-size: 16px;
-    padding: 0;
-  }
-
-  .btn-lg{
-    font-size: 18px;
-  }
-
-  .homepage p{
-    font-size: 18px;
-}
-
-  footer img {
-    width: 80%;
-  }
-
+@media ( max-width : 360px , max-height :640px) {
+	.body {
+		padding: 200px 200px 200px 200px;
+		text-align: center;
+	}
+	.jumbotron h1 {
+		font-size: 24px;
+	}
+	.jumbotron p {
+		font-size: 16px;
+		padding: 0;
+	}
+	.btn-lg {
+		font-size: 18px;
+	}
+	.homepage p {
+		font-size: 18px;
+	}
+	footer img {
+		width: 80%;
+	}
 }

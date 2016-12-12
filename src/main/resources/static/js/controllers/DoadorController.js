@@ -1,13 +1,6 @@
-angular.module('app').controller('doadorcontroller',function($scope, doadorAPI) {
-	$scope.doadores = [];
-	
-	var carregaDoadores = function() {
-		doadorAPI.getDoador().success(function(data) {
-			$scope.doadores = data;
-		}).error(function(data, status) {
-			$scope.message = "Não foi possivel conectar ao servidor tente mais tarde "+ data;
-		});
-	};
+angular.module('app').controller('doadorcontroller',function($scope, doadorAPI,doadores,doador) {
+	$scope.doadores = doadores.data;
+	$scope.doador = doador.data
 
 	$scope.adicionaDoador = function(doador) {
 		DoadorAPI.saveDoador(doador).success(function(data) {
@@ -18,5 +11,4 @@ angular.module('app').controller('doadorcontroller',function($scope, doadorAPI) 
 			$scope.message = "Ocorreu um problema ao criar o Doador "+ data;
 		});
 	};
-	carregaDoadores();
 });

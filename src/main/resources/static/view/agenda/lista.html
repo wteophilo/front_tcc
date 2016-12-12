@@ -1,0 +1,21 @@
+<div class ="container">
+  <h2>Agendas</h2>
+  <hr/>
+  <div class="alert alert-info" ng-show ="message.length>0"> {{message}}</div>
+  <div ng-show="agendas.length > 0">
+
+    <div class="panel panel-default" ng-repeat="agenda in agendas">
+      <div class="panel-heading">
+        <h3 class="panel-title">Protocolo: {{agenda.numProtocolo}}</h3>
+      </div>
+      <div class="panel-body">
+       	<p><label>Nome Doador:</label>{{agenda.doador.nome}}</p>
+        <p><label>Nome Laboratório:</label> {{agenda.laboratorio.nome}}</p>
+       </div>
+      <div class="panel-footer">
+        <a class="btn btn-default ng-class="{active: activetab==
+        '/mostra'}" role="button" href="#/detalhesAgenda/{{agenda.id}}">Exibir</a>
+     </div>
+    </div>
+  </div>
+</div>

@@ -1,23 +1,21 @@
-<div class = "container">
-<h2> Lista de doadores</h2>
-<table ng-show="doadores.length > 0" class="table table-condensed">
-  <thead>
-    <tr>
-      <th>#</th>
-      <th>Nome</th>
-      <th>Email</th>
-      <th>Cep</th>
-      <th>Endereço</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr ng-repeat="doador in doadores">
-      <td>{{doador.id}}</td>
-      <td>{{doador.nome}}</td>
-      <td>{{doador.email}}</td>
-      <td>{{doador.cep}}</td>
-      <td>{{doador.endereco}}</td>
-    </tr>
-  </tbody>
-</table>
+<div class ="container">
+  <h2>Doadores</h2>
+  <hr/>
+  <div class="alert alert-info" ng-show ="message.length>0"> {{message}}</div>
+  <div ng-show="doadores.length > 0">
+
+    <div class="panel panel-default" ng-repeat="doador in doadores">
+      <div class="panel-heading">
+        <h3 class="panel-title">ID:{{doador.id}}</h3>
+      </div>
+      <div class="panel-body">
+       	<p><label>Nome:</label>{{doador.nome}}</p>
+        <p><label>Endereço:</label> {{doador.endereco}}</p>
+       </div>
+      <div class="panel-footer">
+        <a class="btn btn-default ng-class=" {active: activetab==
+        '/mostra'}" role="button" href="#/detalhesDoador/{{doador.id}}">Exibir</a>
+     </div>
+    </div>
+  </div>
 </div>

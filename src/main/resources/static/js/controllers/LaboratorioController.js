@@ -1,14 +1,7 @@
-angular.module('app').controller('laboratoriocontroller',function($scope,laboratorioAPI){
-   $scope.laboratorios = [];
-
-   var carregaLaboratorio = function(){
-     laboratorioAPI.getLaboratorios().success(function(data){
-        $scope.laboratorios = data;
-      }).error(function (data, status) {
-        $scope.message = "Aconteceu um problema: " + data;
-     });
-    };
-
+angular.module('app').controller('laboratoriocontroller',function($scope,laboratorioAPI,laboratorios,laboratorio){
+   $scope.laboratorios = laboratorios.data;
+   $scope.laboratorio = laboratorio.data;
+   
     $scope.adicionaLaboratorio = function(laboratorio){
       laboratorioAPI.saveLaboratorio(laboratorio).success(function(data){
         $scope.message = "Laboratório adicionado com sucesso";
@@ -18,7 +11,7 @@ angular.module('app').controller('laboratoriocontroller',function($scope,laborat
         $scope.message = "Ocorreu um problema ao criar o laboratório "+ data;
       });
     };
+    
+    
 
-
-    carregaLaboratorio();
 });

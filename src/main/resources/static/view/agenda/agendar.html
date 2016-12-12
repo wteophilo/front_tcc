@@ -1,31 +1,3 @@
-<script type="text/javascript">
-	$(document).ready(function() {
-		$("#cep_doador").mask("99.999-999", {
-			placeholder : " "
-		});
-		$("#rg_doador").mask("99.999.999-9", {
-			placeholder : " "
-		});
-		$("#cep_lab").mask("99.999-999", {
-			placeholder : " "
-		});
-	});
-
-	$(function() {
-		$('#datetimepicker').datetimepicker({
-			locale : 'pt-br',
-			format : 'DD-MM-YYYY HH:mm:ss',
-			icons : {
-				previous : 'fa fa-arrow-left',
-				next : 'fa fa-arrow-right',
-				time : "fa fa-clock-o",
-				date : "fa fa-calendar",
-				up : "fa fa-arrow-up",
-				down : "fa fa-arrow-down"
-			}
-		});
-	});
-</script>
 <div class="container">
 	<div class="alert alert-info" ng-show="message.length>0">
 		{{message}}</div>
@@ -115,17 +87,17 @@
 		<h2>Escolha o laboratório</h2>
 		<hr />
 		<div class="container">
-		
+
 			<div class="form-group">
 				<div class='col-sm-6'>
 					<label>Nome:
 						<select class="form-control" ng-model="agenda.laboratorio" ng-options="laboratorio.nome for laboratorio in laboratorios">
 							<option value ="">Selecione o Laboratório</option>
 						</select>
-					</label>					
-				</div> 
+					</label>
+				</div>
 			</div>
-		
+
 			<div ng-show="formAgenda.cep_lab.$dirty"
 				ng-messages="formAgenda.cep_lab.$error">
 				<div ng-message="required" class="alert alert-danger">Por
@@ -165,24 +137,21 @@
 		<h2>Escolha uma data:</h2>
 		<hr />
 		<div class="container">
-			<div ng-show="formAgenda.datetimepicker.$dirty"
-				ng-messages="formAgenda.datetimepicker.$error">
-				<div ng-message="required" class="alert alert-danger">Por
-					favor preencha o campo data.</div>
-			</div>
-		
 			<div class="form-group">
 				<div class='col-sm-6'>
-					<input ng-model="agenda.dataAgendamento" ng-required="true"
-						type="text" name = "datetimepicker" placeholder="dd/mm/yyyy HH:mm:ss" class="form-control"
-						id='datetimepicker' ng-required = "true"/>
+					<input type="text" ng-model="agenda.dataAgendamento" ng-required="true"
+					   id="date" placeholder="dd/mm/yyyy HH:mm:ss" class="form-control"
+						ng-required = "true"/>
+
 				</div>
+				
 			</div>
 		</div>
 
 		<div class="container">
 			<div class="form-group">
 				<div class='col-sm-6'>
+
 					<button type="submit" id="btSummit" name="btSummit"
 						class="btn btn-primary" ng-click="agendar(agenda)">Agendar</button>
 				</div>
@@ -190,3 +159,20 @@
 		</div>
 	</form>
 </div>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		$("#cep_doador").mask("99.999-999", {
+			placeholder : " "
+		});
+		$("#rg_doador").mask("99.999.999-9", {
+			placeholder : " "
+		});
+		$("#cep_lab").mask("99.999-999", {
+			placeholder : " "
+		});
+		$("#date").mask("99/99/9999 99:99",{
+			placeholder : " "
+		});
+	});
+</script>
