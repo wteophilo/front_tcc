@@ -1,7 +1,8 @@
-angular.module('app').controller('agendacontroller',function($scope,$location,agendaAPI,laboratorios,agenda,agendas){
+angular.module('app').controller('agendacontroller',function($scope,$rootScope,$location,agendaAPI,laboratorios,agenda,agendas,authService){
    $scope.agendas = agendas.data;
    $scope.agenda=agenda.data;
    $scope.laboratorios =laboratorios.data;
+   $rootScope.isAuthorize = authService.isLogIn();
    
        
    $scope.agendar = function(agenda){

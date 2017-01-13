@@ -6,8 +6,8 @@ angular.module("app").constant("config", {
   baseUrlBolsa: "https://labservice.herokuapp.com/bolsa"
 });
 
-/*dev
-angular.module("app").constant("config", {
+//dev
+/*angular.module("app").constant("config", {
   baseUrlAgenda: "http://127.0.0.1:8080/agenda",
   baseUrlDoador: "http://127.0.0.1:8080/doador",
   baseUrlLaboratorio: "http://127.0.0.1:8081/laboratorio",

@@ -3,14 +3,19 @@
 	<hr />
 	<div class="panel panel-default">
 		<div class="panel-heading">
-			<h3 class="panel-title">Protocolo: {{agenda.numProtocolo}} : Agendamento: {{agenda.dataAgendamento}} </h3>
+			<h3 class="panel-title">Protocolo: {{agenda.numProtocolo}}  </h3>
 		</div><br/>
+		<div class="panel panel-default panel-body">
+			<p><label>Status: </label>{{agenda.statusAgenda}}</p>
+			<p><label>Data agendamento: </label> {{agenda.dataAgendamento}}</p>
+			<p ng-show = "agenda.dataConclusao.length>0"><label>Data Conclusão:</label> {{agenda.dataConclusao}}</p>
+		</div>
 		<div class="panel panel-default">
 			<div class="panel-heading">
 				<h3 class="panel-title">Doador</h3>
 			</div>
 			<div class="panel-body">
-				<p><label>Nome Doador</label>{{agenda.doador.nome}}</p>
+				<p><label>Nome Doador:</label> {{agenda.doador.nome}}</p>
 				<p><label>RG:</label> {{agenda.doador.rg}}</p>
 				<p> <label>Endereço:</label>{{agenda.doador.endereco}}</p>
 				<p> <label>CEP:</label>{{agenda.doador.cep}}</p>
@@ -22,7 +27,7 @@
 				<h3 class="panel-title">Laboratório</h3>
 			</div>
 			<div class="panel-body">
-				<p><label>Nome Laboratório</label>{{agenda.laboratorio.nome}}</p>
+				<p><label>Nome Laboratório:</label> {{agenda.laboratorio.nome}}</p>
 				<p><label>CNPJ:</label> {{agenda.laboratorio.cnpj}}</p>
 				<p><label>Endereço:</label>{{agenda.laboratorio.endereco}}</p> 
 				<p><label>CEP:</label>{{agenda.laboratorio.cep}}</p>
@@ -32,7 +37,7 @@
 
 		<div class="panel-footer">
 			<a class="btn btn-default"
-				ng-class="{active: activetab == '/listaAgenda}"
+				ng-class="{active: activetab == '/listaAgenda'}"
 				href="#/listaAgenda" role="button" class="btn btn-primary">
 				Voltar </a>
 		</div>

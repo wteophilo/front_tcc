@@ -1,15 +1,19 @@
 <div class ="container">
-  <h2>Laboratórios</h2>
-  <hr/>
+  <div ng-show="agendas.length == 0">
+  	<h3>Não existe nenhum item na lista.</h3>
+  </div>
   <div class="alert alert-info" ng-show ="message.length>0"> {{message}}</div>
   <div ng-show="laboratorios.length > 0">
-
+	<h2>Laboratórios</h2>
+  	<hr/>
     <div class="panel panel-default" ng-repeat="laboratorio in laboratorios">
       <div class="panel-heading">
         <h3 class="panel-title">{{laboratorio.id}} - {{laboratorio.nome}}</h3>
       </div>
       <div class="panel-body">
-        <label>Endereço:</label> {{laboratorio.endereco}}<br/>
+        <p><label>Endereço:</label> {{laboratorio.endereco}}</p>
+        <p><label>Email:</label> {{laboratorio.email}}</p>
+        <p><label>Telefone:</label> {{laboratorio.telefone}}</p>
        </div>
       <div class="panel-footer">
         <a class="btn btn-default ng-class=" {active: activetab==

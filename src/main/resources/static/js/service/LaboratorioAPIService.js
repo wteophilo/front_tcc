@@ -21,6 +21,10 @@ angular.module("app").factory("laboratorioAPI", function ($http, config) {
 	var _saveLaboratorio = function (laboratorio) {
 		return $http.post(config.baseUrlLaboratorio + "/", laboratorio);
 	};
+	
+	var _loginLaboratorio = function(laboratorio){
+		return $http.post(config.baseUrlLaboratorio+"/login/",laboratorio);
+	}
 
 	return {
 		getLaboratorios: _getLaboratorios,
@@ -28,6 +32,7 @@ angular.module("app").factory("laboratorioAPI", function ($http, config) {
 		getLaboratorioByID: _getLaboratorioByID,
 		updateLaboratorioByID: _updateLaboratorioByID,
 		deleteLaboratorioByID: _deleteLaboratorioByID,
-		saveLaboratorio: _saveLaboratorio
+		saveLaboratorio: _saveLaboratorio,
+		loginLaboratorio: _loginLaboratorio
 	};
 });

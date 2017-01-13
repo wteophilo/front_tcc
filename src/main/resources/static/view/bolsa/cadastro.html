@@ -1,5 +1,5 @@
-<div class="alert alert-info" ng-show="message.length>0"></div>
-<div>
+<div class = "container">
+	<div class="alert alert-info" ng-show="message.length>0">{{message}}</div>
 	<form class="form-inline" name="formProtocolo">
 		<div class="container">
 			<h2>Localizar Protocolo</h2>
@@ -55,8 +55,8 @@
 				
 				<div class="form-group">
 					<div class='col-sm-6'>
-						<label>Rg:</label> <input type="text" class="form-control"
-							name="cnpj_lab" id="cnpj_lab" placeholder="Adicione o rg"
+						<label>Cnpj:</label> <input type="text" class="form-control"
+							name="cnpj_lab" id="cnpj_lab" placeholder="Adicione o cnpj"
 							ng-model="agenda.laboratorio.cnpj" value="agenda.laboratorio.cnpj"
 							ng-required="true" ng-disabled="true" />
 					</div>

@@ -2,6 +2,10 @@ angular.module("app").factory("bolsaAPI", function ($http, config) {
 	var _getBolsas = function () {
 		return $http.get(config.baseUrlBolsa + "/lista");
 	};
+	
+	var _getBolsasByLaboratorio = function(id){
+		return $http.get(config.baseUrlBolsa + "/listaBolsasPorLaboratorio/"+id);
+	}
 
 	var _getBolsaByID = function (id) {
 		return $http.get(config.baseUrlBolsa + "/buscaPorId/"+id);
@@ -21,6 +25,7 @@ angular.module("app").factory("bolsaAPI", function ($http, config) {
 
 	return {
 		getBolsas: _getBolsas,
+		getBolsasByLaboratorio:_getBolsasByLaboratorio,
 		getBolsaByID: _getBolsaByID,
 		updateBolsaByID: _updateBolsaByID,
 		deleteBolsaByID: _deleteBolsaByID,

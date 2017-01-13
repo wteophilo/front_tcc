@@ -21,7 +21,7 @@ public class Boot {
 		SpringApplication.run(Boot.class, args);
 	}
 
-	@RequestMapping("/poc_pucminas")
+	@RequestMapping("/poc_pucminas/")
 	@ResponseBody
 	public String home() {
 		return "index";

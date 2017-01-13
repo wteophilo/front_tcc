@@ -1,9 +1,11 @@
 <div class ="container">
-  <h2>Doadores</h2>
-  <hr/>
+  <div ng-show="agendas.length == 0">
+  	<h3>Não existe nenhum item na lista.</h3>
+  </div>
   <div class="alert alert-info" ng-show ="message.length>0"> {{message}}</div>
   <div ng-show="doadores.length > 0">
-
+	<h2>Doadores</h2>
+  	<hr/>
     <div class="panel panel-default" ng-repeat="doador in doadores">
       <div class="panel-heading">
         <h3 class="panel-title">ID:{{doador.id}}</h3>

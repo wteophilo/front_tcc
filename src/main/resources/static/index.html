@@ -27,29 +27,36 @@
 	<script src="lib/angular/angular-resource.min.js"></script>
 	<script src="lib/angular/angular-locale_pt-br.js"></script>
 	<script src="lib/angular/angular-messages.js"></script>
+	<script src="lib/angular/angular-cookies.js"></script>
 	<script src="lib/moment/moment.min.js"></script>
 	<script src="lib/moment/moment-with-locales.min.js"></script>
 	<script src="lib/datepicker/bootstrap-datetimepicker.min.js"></script>
 	<script src="lib/sha/sha1.min.js"></script>
-
+	
 	<script src="js/app.js"></script>
 	<!--Services-->
 	<script src="js/service/AgendaAPIService.js"></script>
 	<script src="js/service/DoadorAPIService.js"></script>
 	<script src="js/service/LaboratorioAPIService.js"></script>
-		<script src="js/service/BolsaAPIService.js"></script>
+	<script src="js/service/BolsaAPIService.js"></script>
+	<script src="js/service/AuthService.js"></script>
 	<!--Configurações-->
 	<script src="js/config/routeConfig.js"></script>
 	<script src="js/config/configValue.js"></script>
 	<script src="js/config/interceptorsConfig.js"></script>
-
+	<script src="js/config/authRun.js"></script>
+	
 	<!--Controllers-->
 	<script src="js/controllers/DoadorController.js"></script>
 	<script src="js/controllers/AgendaController.js"></script>
 	<script src="js/controllers/LaboratorioController.js"></script>
 	<script src="js/controllers/HomeController.js"></script>
 	<script src="js/controllers/BolsaController.js"></script>
+	<script src="js/controllers/AuthController.js"></script>
+	
 	<!-- Interceptors -->
 	<script src="js/interceptors/errorInterceptor.js"></script>
+	<script src="js/interceptors/autorizacaoInterceptor.js"></script>
+	
 </body>
 </html>

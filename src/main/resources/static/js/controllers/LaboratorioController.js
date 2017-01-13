@@ -1,6 +1,8 @@
-angular.module('app').controller('laboratoriocontroller',function($scope,laboratorioAPI,laboratorios,laboratorio){
+angular.module('app').controller('laboratoriocontroller',function($scope,$rootScope,$cookies,$cookieStore,$location,authService,laboratorioAPI,laboratorios,laboratorio){
    $scope.laboratorios = laboratorios.data;
    $scope.laboratorio = laboratorio.data;
+   $scope.message=null;
+   $rootScope.isAuthorize = authService.isLogIn();
    
     $scope.adicionaLaboratorio = function(laboratorio){
       laboratorioAPI.saveLaboratorio(laboratorio).success(function(data){
@@ -11,7 +13,4 @@ angular.module('app').controller('laboratoriocontroller',function($scope,laborat
         $scope.message = "Ocorreu um problema ao criar o laboratório "+ data;
       });
     };
-    
-    
-
 });

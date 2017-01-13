@@ -1,1 +1,1 @@
-angular.module('app',['ngRoute','ngResource','ngMessages']);
+angular.module('app',['ngRoute','ngResource','ngMessages','ngCookies']);
